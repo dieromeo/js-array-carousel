@@ -34,3 +34,11 @@ Ne faccio un altro per next, che faccia l'inverso ovvero:
     -  rimuove all'elemento div in posizione contatore la classe active
     - aumenta il contatore
     - aggiunge active all'elemento corrente
+
+
+### BONUS 1
+
+Imposto una condizione all'interno degli if negli event listener che:
+
+- nel caso del prev, mi resetta il contatore all'ultima immagine (lunghezza variabile con i div all'interno - 1).
+- nel caso next, me la resetta a zero (prima immagine).

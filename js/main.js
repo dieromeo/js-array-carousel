@@ -32,11 +32,18 @@ prev.addEventListener('click', function () { // tolgo active e la assegno al pre
     if (contatoreImmagini > 0) {
 
         selectAllItem[contatoreImmagini].classList.remove('active');
-
         contatoreImmagini--;
-
         selectAllItem[contatoreImmagini].classList.add('active');
     }
+    else {
+
+        // resetta il contatore imagini all'ultima immagine
+        selectAllItem[contatoreImmagini].classList.remove('active');
+        contatoreImmagini = selectAllItem.length - 1;
+        selectAllItem[contatoreImmagini].classList.add('active');
+    }
+    console.log(contatoreImmagini);
+
 })
 
 
@@ -44,9 +51,14 @@ next.addEventListener('click', function () { // tolgo active e la assegno al suc
     if (contatoreImmagini < selectAllItem.length - 1) {
 
         selectAllItem[contatoreImmagini].classList.remove('active');
-
         contatoreImmagini++;
+        selectAllItem[contatoreImmagini].classList.add('active');
+    }
+    else {
 
+        // resetta il contatore imagini a zero
+        selectAllItem[contatoreImmagini].classList.remove('active');
+        contatoreImmagini = 0;
         selectAllItem[contatoreImmagini].classList.add('active');
     }
 })
