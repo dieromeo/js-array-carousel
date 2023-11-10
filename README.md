@@ -42,3 +42,9 @@ Imposto una condizione all'interno degli if negli event listener che:
 
 - nel caso del prev, mi resetta il contatore all'ultima immagine (lunghezza variabile con i div all'interno - 1).
 - nel caso next, me la resetta a zero (prima immagine).
+
+### BONUS 2
+
+Creo un div `thumbnail container` nell'html, al cui interno, sempre tramite l'utilizzo del ciclo for, andro ad inserire i `div` contenitori delle singole thumbnail, e le rispettive immagini.
+
+Creo un contatore per le thumbnail che avrà come valore di partenza quello dell'altro contatore, che aggiungerà la classe `thumbnail active`. Anche questo contatore andrà incrementato all'interno degli if negli event listener per cambiare la thumbnail attiva.
