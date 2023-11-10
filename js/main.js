@@ -3,8 +3,10 @@
 const imageArray = ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg']; // array con immagini
 const divItems = document.querySelector('.items'); // div items
 let contatoreImmagini = 0; // contatore
+// let contatoreThumbnail = 0;
 const prev = document.querySelector('.prev');  // elemento prev
 const next = document.querySelector('.next'); // elemento next
+const divThumbnail = document.querySelector('.thumbnail'); // elemento thumbnail
 
 for (let i = 0; i <= imageArray.length - 1; i++) {
 
@@ -20,45 +22,65 @@ for (let i = 0; i <= imageArray.length - 1; i++) {
     imageContainer.append(image);
     divItems.append(imageContainer);
 
-    if (i === contatoreImmagini) {  // assegno la classe active al primo elemento
+    // thumbnail container
+    const thumbnailContainer = document.createElement('div');
+    thumbnailContainer.classList.add('thumbnail-container');
+
+    //thumbnail
+    const thumbnailImage = document.createElement('img');
+    thumbnailImage.src = `/img/${imageArray[i]}`;
+    thumbnailImage.alt = `thumbnail${i}`;
+
+    thumbnailContainer.append(thumbnailImage);
+    divThumbnail.append(thumbnailContainer);
+
+    if (i === contatoreImmagini) {  // assegno la classe active al primo elemento e thumbnail-active alla prima thumbnail
         imageContainer.classList.add('active');
+        thumbnailContainer.classList.add('thumbnail-active');
     }
 }
 
 const selectAllItem = document.querySelectorAll('.item'); // simil array che contiene tutti i div con le immagini
+const selectAllThumbnail = document.querySelectorAll('.thumbnail-container'); //simil array che contiene tutti i div con le thumbnail
 
 
-prev.addEventListener('click', function () { // tolgo active e la assegno al precedente
+prev.addEventListener('click', function () { // tolgo active e thumbnail-active la assegno al precedente
     if (contatoreImmagini > 0) {
 
         selectAllItem[contatoreImmagini].classList.remove('active');
+        selectAllThumbnail[contatoreImmagini].classList.remove('thumbnail-active');
         contatoreImmagini--;
         selectAllItem[contatoreImmagini].classList.add('active');
+        selectAllThumbnail[contatoreImmagini].classList.add('thumbnail-active');
     }
     else {
 
         // resetta il contatore imagini all'ultima immagine
         selectAllItem[contatoreImmagini].classList.remove('active');
+        selectAllThumbnail[contatoreImmagini].classList.remove('thumbnail-active');
         contatoreImmagini = selectAllItem.length - 1;
         selectAllItem[contatoreImmagini].classList.add('active');
+        selectAllThumbnail[contatoreImmagini].classList.add('thumbnail-active');
     }
-    console.log(contatoreImmagini);
-
 })
 
 
-next.addEventListener('click', function () { // tolgo active e la assegno al successivo
+next.addEventListener('click', function () { // tolgo active e thumbnail-active la assegno al successivo
     if (contatoreImmagini < selectAllItem.length - 1) {
 
         selectAllItem[contatoreImmagini].classList.remove('active');
+        selectAllThumbnail[contatoreImmagini].classList.remove('thumbnail-active');
         contatoreImmagini++;
         selectAllItem[contatoreImmagini].classList.add('active');
+        selectAllThumbnail[contatoreImmagini].classList.add('thumbnail-active');
     }
     else {
 
         // resetta il contatore imagini a zero
         selectAllItem[contatoreImmagini].classList.remove('active');
+        selectAllThumbnail[contatoreImmagini].classList.remove('thumbnail-active');
         contatoreImmagini = 0;
         selectAllItem[contatoreImmagini].classList.add('active');
+        selectAllThumbnail[contatoreImmagini].classList.add('thumbnail-active');
     }
 })

@@ -47,4 +47,4 @@ Imposto una condizione all'interno degli if negli event listener che:
 
 Creo un div `thumbnail container` nell'html, al cui interno, sempre tramite l'utilizzo del ciclo for, andro ad inserire i `div` contenitori delle singole thumbnail, e le rispettive immagini.
 
-Creo un contatore per le thumbnail che avrà come valore di partenza quello dell'altro contatore, che aggiungerà la classe `thumbnail active`. Anche questo contatore andrà incrementato all'interno degli if negli event listener per cambiare la thumbnail attiva.
+Assegno l'aggiuta della classe `thumbnail-active` al contatore immagini precedenti, dato che dovranno andare di pari passo.
