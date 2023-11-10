@@ -30,7 +30,7 @@ Faccio un evento al click di prev che, tramite un if, se il contatore è maggior
 
 Ne faccio un altro per next, che faccia l'inverso ovvero:
 
-- se il contatore è minore della variabile con i div all'interno - 1:
+- se il contatore è minore della lunghezza variabile con i div all'interno - 1:
     -  rimuove all'elemento div in posizione contatore la classe active
     - aumenta il contatore
     - aggiunge active all'elemento corrente
